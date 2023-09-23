@@ -6,3 +6,8 @@ var summation = function (num) {
   return numList.reduce((a, b) => a + b);
   
 }
+
+let summation = function(num) {
+  // using formula for sum of arithmetic series
+  return (num * (num + 1)) / 2;
+}
