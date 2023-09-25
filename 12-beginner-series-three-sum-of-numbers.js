@@ -1,5 +1,4 @@
 
-
 // #1 
 // Pushing to array then reducing (turns out not necessary). A lot of initial fumbling.
 function getSum(a, b) {
@@ -34,6 +33,23 @@ function getSum(a, b) {
   // Calculate the sum of integers from start to finish (inclusive)
   let sum = 0;
   for (let i = start; i <= finish; i++) {
+    sum += i;
+  }
+  
+  return sum;
+}
+
+// #3 
+// Combine the variable assignement for "start" and "finish" into a single loop (slightly less readable)
+function getSum(a, b) {
+  // Check if a === b
+  if (a === b) {
+    return a; // Return either a or b if they are equal.
+  }
+
+  // Calculate the sum of integers from start to finish (inclusive)
+  let sum = 0;
+  for (let i = Math.min(a, b); i <= Math.max(a, b); i++) {
     sum += i;
   }
   
