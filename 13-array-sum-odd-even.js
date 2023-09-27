@@ -7,3 +7,7 @@ function oddOrEven(array) {
   }
   
 }
+
+function oddOrEven(arr) {
+  return arr.reduce((total, currentVal) => total + currentVal, 0) % 2 ? 'odd' : 'even';
+}
