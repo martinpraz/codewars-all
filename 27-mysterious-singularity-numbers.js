@@ -4,7 +4,7 @@
 // function realNumbers(n){
 //   let numbers = 0;
   
-//   for (let i = 1; i < 150; i++) {
+//   for (let i = 1; i < n; i++) {
 //     if (i % 5 && i % 3 && i % 2) {
 //       numbers++;
 //     }
