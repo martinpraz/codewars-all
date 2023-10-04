@@ -5,7 +5,7 @@ function balancedNum(number) {
   if (numArray.length == 1) {
     return "Balanced";
   } else if (numArray.length == 2) {
-    // 13 is a "Balanced" number because for odd numbers we don't consider the middle numbers (so 0 is equal to 0)
+    // 13 is a "Balanced" number because for even numbers we don't consider the middle numbers (so 0 is equal to 0)
     return numArray[0] !== numArray[1] ? "Balanced" : "Not Balanced";
   }
   
