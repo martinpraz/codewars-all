@@ -1,17 +1,22 @@
 
 function realNumbers(n){
   
-  // 26 such numbers in a 100 -- this does not work
-  // 8 such numbers in a 30
+  // constant 8 such numbers ("% [2, 3, 5] !== 0") in any 30-number chunk (30, 60, 90 etc)
+  // so floor dividing a given "n" by 30, we get the number of such chunks 
+  // then multiplying said number of chunks by constant 8 (per chunk) will give number of "% [2, 3, 5] !== 0" numbers in "n - nonfloored-remainder"
+  // e.g. (1234 / 30 = 41), so (41 * 8 = 328) such numbers in (41 * 30 = 1230), but 1234 - 1230 still has a remainder of "4" so..
   let multiplesOf30 = Math.floor(n / 30);
+  // calculate the remainder (1234 % 30 = 4)
   let remainder = n % 30;
   let numbers = 0;
   
+  // manually check how many "% [2, 3, 5] !== 0" numbers exist in a calculated remainder 
   for (let i = 0; i <= remainder; i++) {
     if (i % 5 && i % 3 && i % 2) {
       numbers++;
     }
   }
+    // return number of 30-number chunks times 8 "% [2, 3, 5] !== 0" numbers per chunk + number of numbers calculated in the remainder  
     return (multiplesOf30 * 8) + numbers;
   }
 
