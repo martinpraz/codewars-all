@@ -24,3 +24,16 @@ function disariumNumber(n) {
   }
   
 }
+
+
+//
+function disariumNumber(n){
+  let number = n.toString();
+  let sum = 0;
+  
+  for (let i = 0; i < number.length; i++){
+    sum += Math.pow(number[i], i+1);
+  }
+  
+  return n === sum ? "Disarium !!" : "Not !!";
+}
