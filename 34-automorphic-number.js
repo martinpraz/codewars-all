@@ -1,3 +1,5 @@
+
+//
 function automorphic(n){
   let nSquared = n ** 2;
   let endingStart = nSquared.toString().length - n.toString().length;
@@ -8,3 +10,7 @@ function automorphic(n){
     return "Not!!";
   }
 }
+
+//
+const automorphic = n => String(n*n).endsWith(String(n)) ? "Automorphic" : "Not!!" ;
+
