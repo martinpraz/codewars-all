@@ -1,3 +1,5 @@
+
+//
 function specialNumber(n){
   let specialNums = [0, 1, 2, 3, 4, 5];
   n = n.toString().split("");
@@ -8,4 +10,9 @@ function specialNumber(n){
     }
   }
   return "Special!!";
+}
+
+// Implemented using regex, less verbose
+function specialNumber(n){
+  return /[6-9]/.test(n)?"NOT!!":"Special!!"
 }
