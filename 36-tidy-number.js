@@ -25,3 +25,8 @@ function tidyNumber(n){
   If yes, it returns true, else "false."
   */
 }
+
+//
+function tidyNumber(n) {
+  return n.toString() === n.toString().split('').sort().join('');
+}
