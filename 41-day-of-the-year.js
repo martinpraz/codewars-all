@@ -1,3 +1,4 @@
+//
 function toDayOfYear(arr) {
   const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   arr = [...arr];
@@ -12,4 +13,12 @@ function toDayOfYear(arr) {
 }
   
   return (!isLeap(arr[2]) || (isLeap(arr[2]) && arr[1] < 3)) ? sum + arr[0] : sum + arr[0] + 1;
+}
+
+//
+function toDayOfYear(arr) {
+  // arr = [D, M, YYYY]
+  for (var i = 1; i < arr[1]; i++)
+    arr[0] += new Date(arr[2], i, 0).getDate();
+  return arr[0];
 }
