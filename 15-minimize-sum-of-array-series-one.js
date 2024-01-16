@@ -1,3 +1,5 @@
+
+//
 function minSum(arr) {
   arr.sort((a, b) => b - a);
   let minSum = 0;
@@ -9,5 +11,23 @@ function minSum(arr) {
     minSum += arr[i] * arr[j];
   }
   
+  return minSum;
+}
+
+// 
+function minSum(arr) {
+  let minSum = 0;
+
+  while (arr.length > 0) {
+    const minValue = Math.min(...arr); // Find the minimum value
+    const maxValue = Math.max(...arr); // Find the maximum value
+
+    minSum += minValue * maxValue; // Add the product to the sum
+
+    // Remove the minimum and maximum values from the array
+    arr.splice(arr.indexOf(minValue), 1);
+    arr.splice(arr.indexOf(maxValue), 1);
+  }
+
   return minSum;
 }
