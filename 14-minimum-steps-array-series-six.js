@@ -19,16 +19,16 @@ function minimumSteps(numbers, value){
 // Forget the array, forget the pushing and splicing, just iterate normally and check the "sum >= value" inside the for loop. So elegant and simple
 function minimumSteps(numbers, value) {
   numbers.sort((a, b) => a - b); // Sort the input array in ascending order
-  let howMany = 0;
+  let numberOfSteps = 0;
   let sum = 0;
 
   for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
 
     if (sum >= value) {
-      return howMany;
+      return numberOfSteps;
     }
-    howMany++;
+    numberOfSteps++;
   }
   
 }
