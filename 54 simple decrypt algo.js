@@ -29,3 +29,31 @@ function decrypt(encryption) {
   
   return result;
 }
+
+//
+function decrypt(encryption) {
+  const cleanAndSort = (text) =>
+    text
+      .split("")
+      .filter((char) => char.match(/[a-zA-Z]/))
+      .sort();
+
+  const countOccurrences = (text) =>
+    text.reduce((charCount, digit) => {
+      charCount[digit] = (charCount[digit] || 0) + 1;
+      return charCount;
+    }, {});
+
+  const buildResultString = (alpha, charCount) =>
+    alpha.map((letter) => charCount[letter] || 0).join("");
+
+  const alpha = 'abcdefghijklmnopqrstuvwxyz';
+
+  const sortedText = cleanAndSort(encryption);
+  const charCount = countOccurrences(sortedText);
+  const result = buildResultString(alpha.split(""), charCount);
+
+  return result;
+}
+
+
