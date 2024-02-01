@@ -27,3 +27,17 @@ function duplicateEncode(word){
   return result;
 }
 
+//
+function duplicateEncode(word) {
+  const text = word.toLowerCase().split("");
+
+  const charCount = text.reduce((acc, digit) => {
+    acc[digit] = (acc[digit] || 0) + 1;
+    return acc;
+  }, {});
+
+  const result = text.map(digit => (charCount[digit] === 1 ? '(' : ')')).join('');
+
+  return result;
+}
+
